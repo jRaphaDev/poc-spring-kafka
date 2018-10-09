@@ -1,6 +1,7 @@
 package com.poc.producer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,8 @@ public class Producer {
     @Autowired
     private KafkaTemplate<String, String> template;
 
-    String TOPIC = "topic";
+    @Value("${app.topic.poc}")
+    String TOPIC;
 
     public String post(String message) {
         System.out.println("sending: " + message + " sent to topic: " + TOPIC);

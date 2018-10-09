@@ -1,3 +1,6 @@
+app:
+  topic:
+    poc: poc
 spring:
   kafka:
     consumer:

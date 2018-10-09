@@ -12,9 +12,7 @@ public class Consumer {
 
     private static final Logger LOG = LoggerFactory.getLogger(Consumer.class);
 
-    final String TOPIC = "topic";
-
-    @KafkaListener(topics = TOPIC)
+    @KafkaListener(topics = "${app.topic.poc}")
     public String get(@Payload String message) {
         LOG.info("receving: " + message);
         return message;
